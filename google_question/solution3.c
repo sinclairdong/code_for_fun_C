@@ -7,10 +7,10 @@ char * solution3(char * s, int K){
 	int length = 0;
 	int index = 0;
 	while(s[index] != '\0'){
-		index++;
 		if(s[index] != '-'){
 			length++;
 		}
+		index++;
 	}
 	int flag = (K - (length % K)) % K;
 	length += length/K - ((length % K == 0) ? 1 : 0);
@@ -35,15 +35,30 @@ char * solution3(char * s, int K){
 }
 
 int main(){
-	char * test1 = solution3("a-b", 1);
+	char * test1 = solution3("2-4A0r7-4k", 4);
 	printf("%s",test1);
 	printf("%s","\n");
 	free(test1);
 
-	char * test2 = solution3("a-", 1);
+	char * test2 = solution3("-a", 1);
 	printf("%s",test2);
 	printf("%s","\n");
 	free(test2);
+
+	char * test3 = solution3("2-4A0r7-4k", 3);
+	printf("%s",test3);
+	printf("%s","\n");
+	free(test3);
+
+	char * test4 = solution3("r", 4);
+	printf("%s",test4);
+	printf("%s","\n");
+	free(test3);
+
+	char * test5 = solution3("r", 1);
+	printf("%s",test5);
+	printf("%s","\n");
+	free(test3);
 	// printf("%s",solution3("2-4A0r7-4k", 4));
 	// printf("%s",solution3("r", 4));
 	// printf("%s",solution3("r", 1));
